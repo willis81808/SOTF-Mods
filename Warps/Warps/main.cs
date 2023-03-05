@@ -74,15 +74,10 @@ namespace Warps
                     Version = Warps.VERSION,
                     Name = Warps.NAME,
                     Description = "Create custom warps to teleport around the world",
-                    OnFinishedCreating = CreateMenu
+                    OnFinishedCreating = parent => parent.AddComponent<WarpsMenu>()
                     //OnMenuShow = ShowMenu,
             };
             });
-        }
-
-        private void CreateMenu(GameObject parent)
-        {
-            parent.AddComponent<WarpsMenu>();
         }
 
         public static bool IsInGame()
